@@ -1,0 +1,28 @@
+[19-Apr-2021 19:34:44 America/Chicago] PHP Warning:  error_log(log/proyecto.log): failed to open stream: No such file or directory in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php on line 16
+[19-Apr-2021 19:34:44 America/Chicago] PHP Fatal error:  Uncaught Exception: No se pudo conectar al Servidor Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php:8
+Stack trace:
+#0 /home1/elegipcio/operaciones.elegipcio.pe/model/Pedido.php(23): AccesoBD::ConexionBD(Array)
+#1 /home1/elegipcio/operaciones.elegipcio.pe/ajax/updatePedidos.php(3): Pedido->__construct()
+#2 {main}
+  thrown in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php on line 8
+[19-Apr-2021 19:34:46 America/Chicago] PHP Warning:  error_log(log/proyecto.log): failed to open stream: No such file or directory in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php on line 16
+[19-Apr-2021 19:34:46 America/Chicago] PHP Fatal error:  Uncaught Exception: No se pudo conectar al Servidor Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php:8
+Stack trace:
+#0 /home1/elegipcio/operaciones.elegipcio.pe/model/Pedido.php(23): AccesoBD::ConexionBD(Array)
+#1 /home1/elegipcio/operaciones.elegipcio.pe/ajax/updatePedidos.php(3): Pedido->__construct()
+#2 {main}
+  thrown in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php on line 8
+[19-Apr-2021 19:34:49 America/Chicago] PHP Warning:  error_log(log/proyecto.log): failed to open stream: No such file or directory in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php on line 16
+[19-Apr-2021 19:34:49 America/Chicago] PHP Fatal error:  Uncaught Exception: No se pudo conectar al Servidor Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php:8
+Stack trace:
+#0 /home1/elegipcio/operaciones.elegipcio.pe/model/Pedido.php(23): AccesoBD::ConexionBD(Array)
+#1 /home1/elegipcio/operaciones.elegipcio.pe/ajax/updatePedidos.php(3): Pedido->__construct()
+#2 {main}
+  thrown in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php on line 8
+[19-Apr-2021 19:34:51 America/Chicago] PHP Warning:  error_log(log/proyecto.log): failed to open stream: No such file or directory in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php on line 16
+[19-Apr-2021 19:34:51 America/Chicago] PHP Fatal error:  Uncaught Exception: No se pudo conectar al Servidor Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php:8
+Stack trace:
+#0 /home1/elegipcio/operaciones.elegipcio.pe/model/Pedido.php(23): AccesoBD::ConexionBD(Array)
+#1 /home1/elegipcio/operaciones.elegipcio.pe/ajax/updatePedidos.php(3): Pedido->__construct()
+#2 {main}
+  thrown in /home1/elegipcio/operaciones.elegipcio.pe/model/AccesoBD.class.php on line 8
