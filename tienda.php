@@ -102,7 +102,7 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
                         <div class="switch center-align " style="margin-top: 100px;margin-bottom: 100px">
 
-                            <?php if ($_SESSION['local_san_miguel'] == "san_miguel") {  ?>
+                            <?php if ($_SESSION['local_tienda'] == "san_miguel") {  ?>
                                 <?php if ($item['idTienda'] === '3') {
                                 ?>
                                     <h5>Tienda San Miguel</h5>
