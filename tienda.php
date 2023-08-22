@@ -101,27 +101,48 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
 
                         <div class="switch center-align " style="margin-top: 100px;margin-bottom: 100px">
-                            <?php if ($item['idTienda'] === '1') {
-                            ?>
-                                <h5>Tienda Lince</h5>
 
-                            <?php } ?>
-                            <?php if ($item['idTienda'] === '2') {
-                            ?>
-                                <h5>Tienda Surco</h5>
+                            <?php if ($_SESSION['local_san_miguel'] == "san_miguel") {  ?>
+                                <?php if ($item['idTienda'] === '3') {
+                                ?>
+                                    <h5>Tienda San Miguel</h5>
 
-                            <?php } ?>
-                            <?php if ($item['idTienda'] === '3') {
-                            ?>
-                                <h5>Tienda San Miguel</h5>
+                                    <label>
+                                        CERRADO
+                                        <input <?= ($item['acepta_pedidos'] == 'TRUE') ? 'checked' : '' ?> onclick="actualizarDisponibilidad('<?= $item['acepta_pedidos'] ?>','<?= $item['idTienda'] ?>')" id="chkTiendaStatus" type="checkbox" class="">
+                                        <span class="lever"></span>
+                                        ABIERTO
+                                    </label>
 
+                                <?php } ?>
+
+                            <?php } else { ?>
+                                <?php if ($item['idTienda'] === '1') {
+                                ?>
+                                    <h5>Tienda Lince</h5>
+
+                                <?php } ?>
+
+                                <?php if ($item['idTienda'] === '2') {
+                                ?>
+                                    <h5>Tienda Surco</h5>
+
+                                <?php } ?>
+                                <?php if ($item['idTienda'] === '3') {
+                                ?>
+                                    <h5>Tienda San Miguel</h5>
+
+                                <?php } ?>
+                                <label>
+                                    CERRADO
+                                    <input <?= ($item['acepta_pedidos'] == 'TRUE') ? 'checked' : '' ?> onclick="actualizarDisponibilidad('<?= $item['acepta_pedidos'] ?>','<?= $item['idTienda'] ?>')" id="chkTiendaStatus" type="checkbox" class="">
+                                    <span class="lever"></span>
+                                    ABIERTO
+                                </label>
                             <?php } ?>
-                            <label>
-                                CERRADO
-                                <input <?= ($item['acepta_pedidos'] == 'TRUE') ? 'checked' : '' ?> onclick="actualizarDisponibilidad('<?= $item['acepta_pedidos'] ?>','<?= $item['idTienda'] ?>')" id="chkTiendaStatus" type="checkbox" class="">
-                                <span class="lever"></span>
-                                ABIERTO
-                            </label>
+
+
+
                         </div>
                     <?php } ?>
 
