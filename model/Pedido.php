@@ -28,7 +28,6 @@ class Pedido
             if (isset($_SESSION['storeId'])) {
                 $this->storeId = $_SESSION['storeId'];
             }
-
         } catch (Exception $e) {
             throw $e;
         }
@@ -158,18 +157,18 @@ class Pedido
         try {
             $cast = "SET lc_time_names = 'es_ES';";
             //$sql = "SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  CHAR_LENGTH(idCliente)>0 and pedidos.idTienda = '$storeId' GROUP BY MONTHNAME(fechaPedido) ORDER BY fechaPedido ASC";
-            $sql = "SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 03 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 04 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 05 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 06 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 07 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 08 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 09 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 10 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 11 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2021 AND MONTH(fechaPedido) = 12 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2022 AND MONTH(fechaPedido) = 01 GROUP BY MONTHNAME(fechaPedido) UNION
-                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2022 AND MONTH(fechaPedido) = 02 GROUP BY MONTHNAME(fechaPedido)";
+            $sql = "SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2023 AND MONTH(fechaPedido) = 03 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2023 AND MONTH(fechaPedido) = 04 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2023 AND MONTH(fechaPedido) = 05 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2023 AND MONTH(fechaPedido) = 06 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2022 AND MONTH(fechaPedido) = 07 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2022 AND MONTH(fechaPedido) = 08 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2022 AND MONTH(fechaPedido) = 09 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2022 AND MONTH(fechaPedido) = 10 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2022 AND MONTH(fechaPedido) = 11 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2022 AND MONTH(fechaPedido) = 12 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2023 AND MONTH(fechaPedido) = 01 GROUP BY MONTHNAME(fechaPedido) UNION
+                    SELECT SUM(precioTotal) as montoVentas,MONTHNAME(fechaPedido) as mes FROM pedidos WHERE  pedidos.idTienda = '$storeId' AND YEAR(fechaPedido)=2023 AND MONTH(fechaPedido) = 02 GROUP BY MONTHNAME(fechaPedido)";
             AccesoBD::OtroSQL($this->cn, $cast);
             $lista = AccesoBD::Consultar($this->cn, $sql);
             return $lista;
@@ -204,5 +203,4 @@ class Pedido
             throw $e;
         }
     }
-
 }
