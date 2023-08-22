@@ -27,6 +27,9 @@ if (isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST" && session_i
             if ($_POST['email'] == "inversionesfundasa@elegipcio.pe") {
                 $_SESSION['local_tienda'] = "san_miguel";
                 header("location: ../store-selector");
+            } else if ($_POST['email'] == "cajera1@elegipcio.pe") {
+                $_SESSION['local_tienda'] = "surco";
+                header("location: ../store-selector");
             } else {
                 $_SESSION['local_tienda'] = "admin_store";
                 header("location: ../store-selector");

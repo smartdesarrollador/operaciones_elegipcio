@@ -116,6 +116,20 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
                                 <?php } ?>
 
+                            <?php } else if ($_SESSION['local_tienda'] == "surco") { ?>
+
+                                <?php if ($item['idTienda'] === '2') {
+                                ?>
+                                    <h5>Tienda Surco</h5>
+
+                                    <label>
+                                        CERRADO
+                                        <input <?= ($item['acepta_pedidos'] == 'TRUE') ? 'checked' : '' ?> onclick="actualizarDisponibilidad('<?= $item['acepta_pedidos'] ?>','<?= $item['idTienda'] ?>')" id="chkTiendaStatus" type="checkbox" class="">
+                                        <span class="lever"></span>
+                                        ABIERTO
+                                    </label>
+
+                                <?php } ?>
                             <?php } else { ?>
                                 <?php if ($item['idTienda'] === '1') {
                                 ?>
@@ -195,6 +209,63 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
                         <form action="guardar_fecha_san_miguel.php" method="POST" style="padding: 40px;">
 
                             <input type="date" name="fecha_cupon_san_miguel" placeholder="Ingresar fecha" value="<?php echo $tienda_db_san_miguel["fecha_cupon"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                <?php } else if ($_SESSION['local_tienda'] == "surco") { ?>
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Codigo de Cupón Surco</h5>
+
+                        <form action="guardar_cupon_surco.php" method="POST" style="padding: 40px;">
+
+                            <input type="text" name="cupon_surco" placeholder="Ingresar Codigo de Cupón" value="<?php echo $tienda_db_surco["cupon"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+
+
+                    </div>
+
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Descuento de cupón Surco</h5>
+
+                        <form action="guardar_descuento_surco.php" method="POST" style="padding: 40px;">
+
+                            <input type="text" name="descuento_surco" placeholder="Ingresar descuento" value="<?php echo $tienda_db_surco["descuento"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Fecha Límite cupón Surco</h5>
+
+                        <form action="guardar_fecha_surco.php" method="POST" style="padding: 40px;">
+
+                            <input type="date" name="fecha_cupon_surco" placeholder="Ingresar fecha" value="<?php echo $tienda_db_surco["fecha_cupon"]; ?>">
 
 
                             <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
@@ -548,6 +619,53 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
                             <?php } ?>
 
                         <?php } ?>
+                    <?php } else if ($_SESSION['local_tienda'] == "surco") { ?>
+
+                        <?php foreach ($listaDistritosConCosto as $item) { ?>
+
+                            <?php if ($item['idTienda'] == '2') { ?>
+                                <form onsubmit="actualizarCostoDeEnvio(event)">
+                                    <input type="hidden" class="idDelivery" value="<?= $item['id'] ?>">
+                                    <div class="d-node coords"><?= $item['coords'] ?></div>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <!-- <h6><?= ($item['idTienda'] == '1') ? 'Tienda Lince' : 'Tienda Surco' ?></h6> -->
+
+                                            <h6>Tienda Surco</h6>
+                                            <?php echo $item['name'] ?>
+
+                                        </div>
+                                        <div class="col s6">
+                                            <div class="input-field col s12 ">
+                                                <input type="text" class="validate browser-default precioDistrito width-100" value="<?= $item['price'] ?>">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 center-align">
+                                            <a onclick="previewMapsModal(this)" class="btn btn-flat btn-small grey waves-effect waves-green white-text ">
+                                                <i class="material-icons">
+                                                    remove_red_eye
+                                                </i>
+                                            </a>
+
+                                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                                Guardar
+                                                <i class="material-icons right">
+                                                    save
+                                                </i>
+                                            </button>
+                                            <br>
+                                            <hr>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            <?php } ?>
+
+                        <?php } ?>
                     <?php } else { ?>
                         <?php foreach ($listaDistritosConCosto as $item) { ?>
 
@@ -662,6 +780,55 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
 
                 </div>
+
+            <?php } else if ($_SESSION['local_tienda'] == "surco") { ?>
+                <div class="col l4 s12 m4 xl4 z-depth-5  " style="border-radius: 5px; border: 3px solid black;margin-top: 30px">
+                    <h5 class="center-align">Ingredientes Tienda SURCO</h5>
+
+
+                    <div class="row">
+                        <div class="col s12 m12 xl12 l12 center-align">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php foreach ($ingredientes as $ingrediente) {
+                                        if ($ingrediente['store_id'] == '2') {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $ingrediente['nombre'] . ' ' . $ingrediente['observaciones'] ?></td>
+                                                <td>
+                                                    <div class="switch">
+                                                        <label>
+                                                            NO
+                                                            <?php if ($ingrediente['estado'] == 'ACTIVO') { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" checked type="checkbox">
+                                                            <?php } else { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" type="checkbox">
+                                                            <?php } ?>
+
+                                                            <span class="lever"></span>
+                                                            SI
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                    <?php
+                                        }
+                                    } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
 
             <?php } else { ?>
                 <div class="col l4 s12 m4 xl4 z-depth-5  " style="border-radius: 5px; border: 3px solid black;margin-top: 30px">

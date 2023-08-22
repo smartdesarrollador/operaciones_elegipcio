@@ -135,11 +135,9 @@
             </i>reportes</a>
     </li>
     <li class="divider"></li>
-    <?php if ($_SESSION['local_tienda'] == "san_miguel") {  ?>
-        <li class="center-align"><a href="store-selector-san-miguel"><i class="material-icons">sync_alt</i>Cambiar Local</a></li>
-    <?php } else { ?>
-        <li class="center-align"><a href="store-selector"><i class="material-icons">sync_alt</i>Cambiar Local</a></li>
-    <?php } ?>
+
+    <li class="center-align"><a href="store-selector"><i class="material-icons">sync_alt</i>Cambiar Local</a></li>
+
 
     <li class="divider"></li>
     <li class="center-align"><a href="script/logOut.php"><i class="material-icons">exit_to_app</i>Cerrar Sesión</a></li>
@@ -151,19 +149,13 @@
 
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-    <?php if ($_SESSION['local_tienda'] == "san_miguel") {  ?>
-        <li><a href="store-selector-san-miguel">Cambiar Local:
-                <i class="material-icons">
-                    sync_alt
-                </i>
-            </a></li>
-    <?php } else { ?>
-        <li><a href="store-selector">Cambiar Local:
-                <i class="material-icons">
-                    sync_alt
-                </i>
-            </a></li>
-    <?php } ?>
+
+    <li><a href="store-selector">Cambiar Local:
+            <i class="material-icons">
+                sync_alt
+            </i>
+        </a></li>
+
 
 
 
@@ -179,6 +171,13 @@
                 Local San Miguel
             </a>
         </li>
+    <?php } else if ($_SESSION['local_tienda'] == "surco") { ?>
+        <li>
+            <a href="productos?store=2">
+                Local Surco
+            </a>
+        </li>
+
     <?php } else { ?>
         <li>
             <a href="productos?store=1">
@@ -204,6 +203,13 @@
                 Local San Miguel
             </a>
         </li>
+    <?php } else if ($_SESSION['local_tienda'] == "surco") { ?>
+        <li>
+            <a href="productos?store=2">
+                Local Surco
+            </a>
+        </li>
+
     <?php } else { ?>
         <li>
             <a href="productos?store=1">
@@ -231,6 +237,13 @@
                 Usuarios San Miguel
             </a>
         </li>
+    <?php } else if ($_SESSION['local_tienda'] == "surco") { ?>
+        <li>
+            <a href="usuarios_surco.php">
+                Usuarios Surco
+            </a>
+        </li>
+
     <?php } else { ?>
         <li>
             <a href="usuarios_lince.php">
@@ -258,6 +271,13 @@
                 Usuarios San Miguel
             </a>
         </li>
+    <?php } else if ($_SESSION['local_tienda'] == "surco") { ?>
+        <li>
+            <a href="usuarios_surco.php">
+                Usuarios Surco
+            </a>
+        </li>
+
     <?php } else { ?>
         <li>
             <a href="usuarios_lince.php">

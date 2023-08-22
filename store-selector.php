@@ -49,6 +49,14 @@ if (isset($_SESSION["current_email"]) && $_SESSION["current_email"] != '') {
                                             Local 3 (San Miguel)
                                         </h6>
                                     </a>
+                                <?php } else if ($_SESSION['local_tienda'] == "surco") { ?>
+                                    <a href="#!" onclick="chooseStoreId(2)" class="collection-item grey-text text-darken-2">
+                                        <h6>
+                                            <i class="material-icons left">store</i>
+                                            Local 2 (Surco)
+                                        </h6>
+                                    </a>
+
                                 <?php } else { ?>
                                     <a href="#!" onclick="chooseStoreId(1)" class="collection-item grey-text text-darken-2">
                                         <h6>
