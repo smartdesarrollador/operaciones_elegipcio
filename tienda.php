@@ -149,28 +149,86 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
                 </div>
 
+                <?php if ($_SESSION['local_tienda'] == "san_miguel") {  ?>
 
-                <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
-                    <h5 class="center-align">Codigo de Cupón Lince</h5>
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Codigo de Cupón San Miguel</h5>
 
-                    <form action="guardar_cupon.php" method="POST" style="padding: 40px;">
+                        <form action="guardar_cupon_san_miguel.php" method="POST" style="padding: 40px;">
 
-                        <input type="text" name="cupon" placeholder="Ingresar Codigo de Cupón" value="<?php echo $tienda_db["cupon"]; ?>">
-
-
-                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                            Guardar
-                            <i class="material-icons right">
-                                save
-                            </i>
-                        </button>
-                    </form>
+                            <input type="text" name="cupon_san_miguel" placeholder="Ingresar Codigo de Cupón" value="<?php echo $tienda_db_san_miguel["cupon"]; ?>">
 
 
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
 
-                </div>
 
-                <!--  <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+
+                    </div>
+
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Descuento de cupón San Miguel</h5>
+
+                        <form action="guardar_descuento_san_miguel.php" method="POST" style="padding: 40px;">
+
+                            <input type="text" name="descuento_san_miguel" placeholder="Ingresar descuento" value="<?php echo $tienda_db_san_miguel["descuento"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Fecha Límite cupón San Miguel</h5>
+
+                        <form action="guardar_fecha_san_miguel.php" method="POST" style="padding: 40px;">
+
+                            <input type="date" name="fecha_cupon_san_miguel" placeholder="Ingresar fecha" value="<?php echo $tienda_db_san_miguel["fecha_cupon"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                <?php } else { ?>
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Codigo de Cupón Lince</h5>
+
+                        <form action="guardar_cupon.php" method="POST" style="padding: 40px;">
+
+                            <input type="text" name="cupon" placeholder="Ingresar Codigo de Cupón" value="<?php echo $tienda_db["cupon"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+
+
+                    </div>
+
+                    <!--  <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
                     <h5 class="center-align">Codigo de Cupón 2</h5>
 
                     <form action="guardar_cupon_2.php" method="POST" style="padding: 40px;">
@@ -190,44 +248,43 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
                 </div> -->
 
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Descuento de cupón Lince</h5>
 
-                <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
-                    <h5 class="center-align">Descuento de cupón Lince</h5>
+                        <form action="guardar_descuento.php" method="POST" style="padding: 40px;">
 
-                    <form action="guardar_descuento.php" method="POST" style="padding: 40px;">
-
-                        <input type="text" name="descuento" placeholder="Ingresar descuento" value="<?php echo $tienda_db["descuento"]; ?>">
-
-
-                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                            Guardar
-                            <i class="material-icons right">
-                                save
-                            </i>
-                        </button>
-                    </form>
-
-                </div>
-
-                <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
-                    <h5 class="center-align">Fecha límite cupón Lince</h5>
-
-                    <form action="guardar_fecha_lince.php" method="POST" style="padding: 40px;">
-
-                        <input type="date" name="fecha_cupon_lince" placeholder="Ingresar fecha" value="<?php echo $tienda_db["fecha_cupon"]; ?>">
+                            <input type="text" name="descuento" placeholder="Ingresar descuento" value="<?php echo $tienda_db["descuento"]; ?>">
 
 
-                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                            Guardar
-                            <i class="material-icons right">
-                                save
-                            </i>
-                        </button>
-                    </form>
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
 
-                </div>
+                    </div>
 
-                <!--        <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Fecha límite cupón Lince</h5>
+
+                        <form action="guardar_fecha_lince.php" method="POST" style="padding: 40px;">
+
+                            <input type="date" name="fecha_cupon_lince" placeholder="Ingresar fecha" value="<?php echo $tienda_db["fecha_cupon"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <!--        <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
                     <h5 class="center-align">Monto Minimo</h5>
 
                     <form action="guardar_cantidad_total.php" method="POST" style="padding: 40px;">
@@ -247,119 +304,119 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
                 </div> -->
 
-                <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
-                    <h5 class="center-align">Codigo de Cupón Surco</h5>
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Codigo de Cupón Surco</h5>
 
-                    <form action="guardar_cupon_surco.php" method="POST" style="padding: 40px;">
+                        <form action="guardar_cupon_surco.php" method="POST" style="padding: 40px;">
 
-                        <input type="text" name="cupon_surco" placeholder="Ingresar Codigo de Cupón" value="<?php echo $tienda_db_surco["cupon"]; ?>">
-
-
-                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                            Guardar
-                            <i class="material-icons right">
-                                save
-                            </i>
-                        </button>
-                    </form>
+                            <input type="text" name="cupon_surco" placeholder="Ingresar Codigo de Cupón" value="<?php echo $tienda_db_surco["cupon"]; ?>">
 
 
-
-                </div>
-
-                <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
-                    <h5 class="center-align">Descuento de cupón Surco</h5>
-
-                    <form action="guardar_descuento_surco.php" method="POST" style="padding: 40px;">
-
-                        <input type="text" name="descuento_surco" placeholder="Ingresar descuento" value="<?php echo $tienda_db_surco["descuento"]; ?>">
-
-
-                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                            Guardar
-                            <i class="material-icons right">
-                                save
-                            </i>
-                        </button>
-                    </form>
-
-                </div>
-
-                <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
-                    <h5 class="center-align">Fecha Límite cupón Surco</h5>
-
-                    <form action="guardar_fecha_surco.php" method="POST" style="padding: 40px;">
-
-                        <input type="date" name="fecha_cupon_surco" placeholder="Ingresar fecha" value="<?php echo $tienda_db_surco["fecha_cupon"]; ?>">
-
-
-                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                            Guardar
-                            <i class="material-icons right">
-                                save
-                            </i>
-                        </button>
-                    </form>
-
-                </div>
-
-                <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
-                    <h5 class="center-align">Codigo de Cupón San Miguel</h5>
-
-                    <form action="guardar_cupon_san_miguel.php" method="POST" style="padding: 40px;">
-
-                        <input type="text" name="cupon_san_miguel" placeholder="Ingresar Codigo de Cupón" value="<?php echo $tienda_db_san_miguel["cupon"]; ?>">
-
-
-                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                            Guardar
-                            <i class="material-icons right">
-                                save
-                            </i>
-                        </button>
-                    </form>
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
 
 
 
-                </div>
+                    </div>
 
-                <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
-                    <h5 class="center-align">Descuento de cupón San Miguel</h5>
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Descuento de cupón Surco</h5>
 
-                    <form action="guardar_descuento_san_miguel.php" method="POST" style="padding: 40px;">
+                        <form action="guardar_descuento_surco.php" method="POST" style="padding: 40px;">
 
-                        <input type="text" name="descuento_san_miguel" placeholder="Ingresar descuento" value="<?php echo $tienda_db_san_miguel["descuento"]; ?>">
-
-
-                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                            Guardar
-                            <i class="material-icons right">
-                                save
-                            </i>
-                        </button>
-                    </form>
-
-                </div>
-
-                <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
-                    <h5 class="center-align">Fecha Límite cupón San Miguel</h5>
-
-                    <form action="guardar_fecha_san_miguel.php" method="POST" style="padding: 40px;">
-
-                        <input type="date" name="fecha_cupon_san_miguel" placeholder="Ingresar fecha" value="<?php echo $tienda_db_san_miguel["fecha_cupon"]; ?>">
+                            <input type="text" name="descuento_surco" placeholder="Ingresar descuento" value="<?php echo $tienda_db_surco["descuento"]; ?>">
 
 
-                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                            Guardar
-                            <i class="material-icons right">
-                                save
-                            </i>
-                        </button>
-                    </form>
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
 
-                </div>
+                    </div>
 
-                <!--             <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Fecha Límite cupón Surco</h5>
+
+                        <form action="guardar_fecha_surco.php" method="POST" style="padding: 40px;">
+
+                            <input type="date" name="fecha_cupon_surco" placeholder="Ingresar fecha" value="<?php echo $tienda_db_surco["fecha_cupon"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Codigo de Cupón San Miguel</h5>
+
+                        <form action="guardar_cupon_san_miguel.php" method="POST" style="padding: 40px;">
+
+                            <input type="text" name="cupon_san_miguel" placeholder="Ingresar Codigo de Cupón" value="<?php echo $tienda_db_san_miguel["cupon"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+
+
+                    </div>
+
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Descuento de cupón San Miguel</h5>
+
+                        <form action="guardar_descuento_san_miguel.php" method="POST" style="padding: 40px;">
+
+                            <input type="text" name="descuento_san_miguel" placeholder="Ingresar descuento" value="<?php echo $tienda_db_san_miguel["descuento"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                        <h5 class="center-align">Fecha Límite cupón San Miguel</h5>
+
+                        <form action="guardar_fecha_san_miguel.php" method="POST" style="padding: 40px;">
+
+                            <input type="date" name="fecha_cupon_san_miguel" placeholder="Ingresar fecha" value="<?php echo $tienda_db_san_miguel["fecha_cupon"]; ?>">
+
+
+                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                Guardar
+                                <i class="material-icons right">
+                                    save
+                                </i>
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <!--             <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
                     <h5 class="center-align">Monto Minimo San Miguel</h5>
 
                     <form action="guardar_cantidad_total_san_miguel.php" method="POST" style="padding: 40px;">
@@ -381,7 +438,7 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
 
 
-                <!--  <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                    <!--  <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
                     <h5 class="center-align">Descuento de cupón 2</h5>
 
                     <form action="guardar_descuento_2.php" method="POST" style="padding: 40px;">
@@ -399,7 +456,7 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
                 </div> -->
 
-                <!--  <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
+                    <!--  <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;">
                     <h5 class="center-align">Monto Minimo 2</h5>
 
                     <form action="guardar_cantidad_total_2.php" method="POST" style="padding: 40px;">
@@ -419,6 +476,21 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
                 </div> -->
 
+                <?php } ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -430,57 +502,109 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
                 <div class="z-depth-5" style="border-radius: 5px; border: 3px solid black;margin-top: 30px;padding:15px">
                     <h5 class="center-align">Costos de Delivery</h5>
 
-                    <?php foreach ($listaDistritosConCosto as $item) { ?>
-                        <form onsubmit="actualizarCostoDeEnvio(event)">
-                            <input type="hidden" class="idDelivery" value="<?= $item['id'] ?>">
-                            <div class="d-node coords"><?= $item['coords'] ?></div>
-                            <div class="row">
-                                <div class="col s6">
-                                    <!-- <h6><?= ($item['idTienda'] == '1') ? 'Tienda Lince' : 'Tienda Surco' ?></h6> -->
+                    <?php if ($_SESSION['local_tienda'] == "san_miguel") {  ?>
+                        <?php foreach ($listaDistritosConCosto as $item) { ?>
 
-                                    <?php if ($item['idTienda'] == '1') { ?>
-                                        <h6>Tienda Lince</h6>
-                                        <?php echo $item['name'] ?>
-                                    <?php } else if ($item['idTienda'] == '2') { ?>
-                                        <h6>Tienda Surco</h6>
-                                        <?php echo $item['name'] ?>
-                                    <?php } else { ?>
-                                        <h6>Tienda San Miguel</h6>
-                                        <?php echo $item['name'] ?>
+                            <?php if ($item['idTienda'] == '3') { ?>
+                                <form onsubmit="actualizarCostoDeEnvio(event)">
+                                    <input type="hidden" class="idDelivery" value="<?= $item['id'] ?>">
+                                    <div class="d-node coords"><?= $item['coords'] ?></div>
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <!-- <h6><?= ($item['idTienda'] == '1') ? 'Tienda Lince' : 'Tienda Surco' ?></h6> -->
 
-                                    <?php } ?>
+                                            <h6>Tienda San Miguel</h6>
+                                            <?php echo $item['name'] ?>
 
-                                </div>
-                                <div class="col s6">
-                                    <div class="input-field col s12 ">
-                                        <input type="text" class="validate browser-default precioDistrito width-100" value="<?= $item['price'] ?>">
+                                        </div>
+                                        <div class="col s6">
+                                            <div class="input-field col s12 ">
+                                                <input type="text" class="validate browser-default precioDistrito width-100" value="<?= $item['price'] ?>">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 center-align">
+                                            <a onclick="previewMapsModal(this)" class="btn btn-flat btn-small grey waves-effect waves-green white-text ">
+                                                <i class="material-icons">
+                                                    remove_red_eye
+                                                </i>
+                                            </a>
+
+                                            <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                                Guardar
+                                                <i class="material-icons right">
+                                                    save
+                                                </i>
+                                            </button>
+                                            <br>
+                                            <hr>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            <?php } ?>
+
+                        <?php } ?>
+                    <?php } else { ?>
+                        <?php foreach ($listaDistritosConCosto as $item) { ?>
+
+                            <form onsubmit="actualizarCostoDeEnvio(event)">
+                                <input type="hidden" class="idDelivery" value="<?= $item['id'] ?>">
+                                <div class="d-node coords"><?= $item['coords'] ?></div>
+                                <div class="row">
+                                    <div class="col s6">
+                                        <!-- <h6><?= ($item['idTienda'] == '1') ? 'Tienda Lince' : 'Tienda Surco' ?></h6> -->
+
+                                        <?php if ($item['idTienda'] == '1') { ?>
+                                            <h6>Tienda Lince</h6>
+                                            <?php echo $item['name'] ?>
+                                        <?php } else if ($item['idTienda'] == '2') { ?>
+                                            <h6>Tienda Surco</h6>
+                                            <?php echo $item['name'] ?>
+                                        <?php } else { ?>
+                                            <h6>Tienda San Miguel</h6>
+                                            <?php echo $item['name'] ?>
+
+                                        <?php } ?>
 
                                     </div>
+                                    <div class="col s6">
+                                        <div class="input-field col s12 ">
+                                            <input type="text" class="validate browser-default precioDistrito width-100" value="<?= $item['price'] ?>">
 
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 center-align">
-                                    <a onclick="previewMapsModal(this)" class="btn btn-flat btn-small grey waves-effect waves-green white-text ">
-                                        <i class="material-icons">
-                                            remove_red_eye
-                                        </i>
-                                    </a>
+                                <div class="row">
+                                    <div class="col-12 center-align">
+                                        <a onclick="previewMapsModal(this)" class="btn btn-flat btn-small grey waves-effect waves-green white-text ">
+                                            <i class="material-icons">
+                                                remove_red_eye
+                                            </i>
+                                        </a>
 
-                                    <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
-                                        Guardar
-                                        <i class="material-icons right">
-                                            save
-                                        </i>
-                                    </button>
-                                    <br>
-                                    <hr>
+                                        <button type="submit" class="btn btn-flat btn-small teal waves-effect waves-green white-text ">
+                                            Guardar
+                                            <i class="material-icons right">
+                                                save
+                                            </i>
+                                        </button>
+                                        <br>
+                                        <hr>
 
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
 
+                        <?php } ?>
                     <?php } ?>
+
+
+
                 </div>
 
             </div>
@@ -489,144 +613,208 @@ $listaDistritosConCosto = $objDelivery->getCostoPorDistritos();
 
 
         <div class="row">
-            <div class="col l4 s12 m4 xl4 z-depth-5  " style="border-radius: 5px; border: 3px solid black;margin-top: 30px">
-                <h5 class="center-align">Ingredientes Tienda Lince</h5>
+
+            <?php if ($_SESSION['local_tienda'] == "san_miguel") {  ?>
+
+                <div class="col l4 s12 m4 xl4 z-depth-5  " style="border-radius: 5px; border: 3px solid black;margin-top: 30px">
+                    <h5 class="center-align">Ingredientes Tienda San Miguel</h5>
 
 
-                <div class="row">
-                    <div class="col s12 m12 xl12 l12 center-align">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Estado</th>
-                                </tr>
-                            </thead>
+                    <div class="row">
+                        <div class="col s12 m12 xl12 l12 center-align">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                <?php foreach ($ingredientes as $ingrediente) {
-                                    if ($ingrediente['store_id'] == '1') {
-                                ?>
-                                        <tr>
-                                            <td><?php echo $ingrediente['nombre'] . ' ' . $ingrediente['observaciones'] ?></td>
-                                            <td>
-                                                <div class="switch">
-                                                    <label>
-                                                        NO
-                                                        <?php if ($ingrediente['estado'] == 'ACTIVO') { ?>
-                                                            <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" checked type="checkbox">
-                                                        <?php } else { ?>
-                                                            <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" type="checkbox">
-                                                        <?php } ?>
+                                <tbody>
+                                    <?php foreach ($ingredientes as $ingrediente) {
+                                        if ($ingrediente['store_id'] == '3') {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $ingrediente['nombre'] . ' ' . $ingrediente['observaciones'] ?></td>
+                                                <td>
+                                                    <div class="switch">
+                                                        <label>
+                                                            NO
+                                                            <?php if ($ingrediente['estado'] == 'ACTIVO') { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" checked type="checkbox">
+                                                            <?php } else { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" type="checkbox">
+                                                            <?php } ?>
 
-                                                        <span class="lever"></span>
-                                                        SI
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                <?php
-                                    }
-                                } ?>
-                            </tbody>
-                        </table>
+                                                            <span class="lever"></span>
+                                                            SI
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                    <?php
+                                        }
+                                    } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+
+
                 </div>
 
+            <?php } else { ?>
+                <div class="col l4 s12 m4 xl4 z-depth-5  " style="border-radius: 5px; border: 3px solid black;margin-top: 30px">
+                    <h5 class="center-align">Ingredientes Tienda Lince</h5>
 
-            </div>
-            <div class="col l4 s12 m4 xl4 z-depth-5  " style="border-radius: 5px; border: 3px solid black;margin-top: 30px">
-                <h5 class="center-align">Ingredientes Tienda SURCO</h5>
 
+                    <div class="row">
+                        <div class="col s12 m12 xl12 l12 center-align">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
 
-                <div class="row">
-                    <div class="col s12 m12 xl12 l12 center-align">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Estado</th>
-                                </tr>
-                            </thead>
+                                <tbody>
+                                    <?php foreach ($ingredientes as $ingrediente) {
+                                        if ($ingrediente['store_id'] == '1') {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $ingrediente['nombre'] . ' ' . $ingrediente['observaciones'] ?></td>
+                                                <td>
+                                                    <div class="switch">
+                                                        <label>
+                                                            NO
+                                                            <?php if ($ingrediente['estado'] == 'ACTIVO') { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" checked type="checkbox">
+                                                            <?php } else { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" type="checkbox">
+                                                            <?php } ?>
 
-                            <tbody>
-                                <?php foreach ($ingredientes as $ingrediente) {
-                                    if ($ingrediente['store_id'] == '2') {
-                                ?>
-                                        <tr>
-                                            <td><?php echo $ingrediente['nombre'] . ' ' . $ingrediente['observaciones'] ?></td>
-                                            <td>
-                                                <div class="switch">
-                                                    <label>
-                                                        NO
-                                                        <?php if ($ingrediente['estado'] == 'ACTIVO') { ?>
-                                                            <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" checked type="checkbox">
-                                                        <?php } else { ?>
-                                                            <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" type="checkbox">
-                                                        <?php } ?>
-
-                                                        <span class="lever"></span>
-                                                        SI
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                <?php
-                                    }
-                                } ?>
-                            </tbody>
-                        </table>
+                                                            <span class="lever"></span>
+                                                            SI
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                    <?php
+                                        }
+                                    } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+
+
                 </div>
 
-
-            </div>
-            <div class="col l4 s12 m4 xl4 z-depth-5  " style="border-radius: 5px; border: 3px solid black;margin-top: 30px">
-                <h5 class="center-align">Ingredientes Tienda San Miguel</h5>
+                <div class="col l4 s12 m4 xl4 z-depth-5  " style="border-radius: 5px; border: 3px solid black;margin-top: 30px">
+                    <h5 class="center-align">Ingredientes Tienda SURCO</h5>
 
 
-                <div class="row">
-                    <div class="col s12 m12 xl12 l12 center-align">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Estado</th>
-                                </tr>
-                            </thead>
+                    <div class="row">
+                        <div class="col s12 m12 xl12 l12 center-align">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
 
-                            <tbody>
-                                <?php foreach ($ingredientes as $ingrediente) {
-                                    if ($ingrediente['store_id'] == '3') {
-                                ?>
-                                        <tr>
-                                            <td><?php echo $ingrediente['nombre'] . ' ' . $ingrediente['observaciones'] ?></td>
-                                            <td>
-                                                <div class="switch">
-                                                    <label>
-                                                        NO
-                                                        <?php if ($ingrediente['estado'] == 'ACTIVO') { ?>
-                                                            <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" checked type="checkbox">
-                                                        <?php } else { ?>
-                                                            <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" type="checkbox">
-                                                        <?php } ?>
+                                <tbody>
+                                    <?php foreach ($ingredientes as $ingrediente) {
+                                        if ($ingrediente['store_id'] == '2') {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $ingrediente['nombre'] . ' ' . $ingrediente['observaciones'] ?></td>
+                                                <td>
+                                                    <div class="switch">
+                                                        <label>
+                                                            NO
+                                                            <?php if ($ingrediente['estado'] == 'ACTIVO') { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" checked type="checkbox">
+                                                            <?php } else { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" type="checkbox">
+                                                            <?php } ?>
 
-                                                        <span class="lever"></span>
-                                                        SI
-                                                    </label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                <?php
-                                    }
-                                } ?>
-                            </tbody>
-                        </table>
+                                                            <span class="lever"></span>
+                                                            SI
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                    <?php
+                                        }
+                                    } ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+
+
                 </div>
 
+                <div class="col l4 s12 m4 xl4 z-depth-5  " style="border-radius: 5px; border: 3px solid black;margin-top: 30px">
+                    <h5 class="center-align">Ingredientes Tienda San Miguel</h5>
 
-            </div>
+
+                    <div class="row">
+                        <div class="col s12 m12 xl12 l12 center-align">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php foreach ($ingredientes as $ingrediente) {
+                                        if ($ingrediente['store_id'] == '3') {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $ingrediente['nombre'] . ' ' . $ingrediente['observaciones'] ?></td>
+                                                <td>
+                                                    <div class="switch">
+                                                        <label>
+                                                            NO
+                                                            <?php if ($ingrediente['estado'] == 'ACTIVO') { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" checked type="checkbox">
+                                                            <?php } else { ?>
+                                                                <input data-idProducto="<?php echo $ingrediente['idIngrediente']; ?>" class="chkStock" type="checkbox">
+                                                            <?php } ?>
+
+                                                            <span class="lever"></span>
+                                                            SI
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                    <?php
+                                        }
+                                    } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            <?php } ?>
+
+
+
+
+
+
+
+
+
         </div>
     </div>
     <!-- Modal Structure -->

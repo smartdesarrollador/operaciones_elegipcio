@@ -24,25 +24,17 @@ if (isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST" && session_i
             $_SESSION['current_fullName'] = $lista['nombre'];
             $_SESSION['current_rol'] = 'admin';
 
-
-
             if ($_POST['email'] == "inversionesfundasa@elegipcio.pe") {
                 $_SESSION['local_tienda'] = "san_miguel";
-                header("location: ../store-selector-san-miguel");
+                header("location: ../store-selector");
             } else {
+                $_SESSION['local_tienda'] = "admin_store";
                 header("location: ../store-selector");
             }
         } else {
             $_SESSION['current_email'] = $lista['correo'];
             $_SESSION['current_fullName'] = $lista['nombre'];
             $_SESSION['current_rol'] = 'motorizado';
-
-            if ($_POST['email'] == "inversionesfundasa@elegipcio.pe") {
-                $_SESSION['local_tienda'] = "san_miguel";
-                header("location: ../store-selector-san-miguel");
-            } else {
-                header("location: ../store-selector");
-            }
         }
     } else {
         header("location: ../error");
